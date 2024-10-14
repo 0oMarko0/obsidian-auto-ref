@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-auto-ref",
+	"name": "Auto Ref",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Automatically generates reference notes from media sources like books, videos, and files by extracting key information such as author, title, and publication date.",
+	"author": "mogagnon",
+	"authorUrl": "https://github.com/0oMarko0",
+	"isDesktopOnly": false
+}
