@@ -10,7 +10,7 @@ export default class SettingTab extends PluginSettingTab {
 	}
 
 	display(): void {
-		const { containerEl, plugin } = this;
+		const { containerEl } = this;
 
 		containerEl.empty();
 
@@ -22,7 +22,7 @@ export default class SettingTab extends PluginSettingTab {
 					.setPlaceholder('Example: folder-1/folder-2')
 					.setValue(this.plugin.settings.referenceFolder)
 					.onChange(async (value) => {
-						plugin.settings.referenceFolder = value;
+						this.plugin.settings.referenceFolder = value;
 						await this.save();
 					})
 			);
@@ -33,7 +33,7 @@ export default class SettingTab extends PluginSettingTab {
 			)
 			.addText((text) =>
 				text.setPlaceholder('Api Key').onChange(async (value) => {
-					plugin.settings.googleApiKey = value;
+					this.plugin.settings.googleApiKey = value;
 					await this.save();
 				})
 			);
@@ -45,7 +45,7 @@ export default class SettingTab extends PluginSettingTab {
 					.setPlaceholder('http://localhost:3000')
 					.setValue(this.plugin.settings.webApiReferenceUrl)
 					.onChange(async (value) => {
-						plugin.settings.webApiReferenceUrl = value;
+						this.plugin.settings.webApiReferenceUrl = value;
 						await this.save();
 					})
 			);

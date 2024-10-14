@@ -23,6 +23,7 @@ export default class AutoReferencePlugin extends Plugin {
 	settings: AutoRefSettings;
 
 	async onload() {
+		console.log("main")
 		await this.loadSettings();
 
 		if (!this.strategyContext) {
