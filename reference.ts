@@ -21,7 +21,7 @@ export interface WebReference extends BaseReference {
 export interface YoutubeReference extends WebReference {
 	videoId: string;
 	channelId: string;
-	topicCategories: string[];
+	topicCategories?: string[];
 	channelUrl: string;
 }
 

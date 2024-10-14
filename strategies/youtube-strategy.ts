@@ -98,7 +98,7 @@ export class YoutubeStrategy implements Strategy<YoutubeReference> {
 					author: channelResponse.snippet.title,
 					videoId: videoResponse.id,
 					channelId: channelResponse.id,
-					topicCategories: videoResponse.topicDetails.topicCategories,
+					topicCategories: videoResponse?.topicDetails?.topicCategories,
 					url: url,
 					channelUrl: `https://www.youtube.com/channel/${channelResponse.id}`,
 				},
