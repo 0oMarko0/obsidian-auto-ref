@@ -13,6 +13,11 @@ export interface AutoRefSettings {
 	googleApiKey?: string;
 }
 
+const DEFAULT_SETTINGS: AutoRefSettings = {
+	referenceFolder: 'references',
+	webApiReferenceUrl: 'http://localhost:3000/api/reference',
+};
+
 export default class AutoReferencePlugin extends Plugin {
 	private strategyContext: StrategyContext;
 	settings: AutoRefSettings;
@@ -83,7 +88,7 @@ export default class AutoReferencePlugin extends Plugin {
 	onunload() {}
 
 	async loadSettings() {
-		this.settings = await this.loadData();
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
 	}
 
 	async saveSettings() {

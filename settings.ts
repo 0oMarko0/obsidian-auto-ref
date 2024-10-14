@@ -20,6 +20,7 @@ export default class SettingTab extends PluginSettingTab {
 			.addText((text) =>
 				text
 					.setPlaceholder('Example: folder-1/folder-2')
+					.setValue(this.plugin.settings.referenceFolder)
 					.onChange(async (value) => {
 						plugin.settings.referenceFolder = value;
 						await this.save();
@@ -40,10 +41,13 @@ export default class SettingTab extends PluginSettingTab {
 			.setName('Web reference api')
 			.setDesc('Url for the web reference api.')
 			.addText((text) =>
-				text.setPlaceholder('http://localhost:3000').onChange(async (value) => {
-					plugin.settings.webApiReferenceUrl = value;
-					await this.save();
-				})
+				text
+					.setPlaceholder('http://localhost:3000')
+					.setValue(this.plugin.settings.webApiReferenceUrl)
+					.onChange(async (value) => {
+						plugin.settings.webApiReferenceUrl = value;
+						await this.save();
+					})
 			);
 	}
 
